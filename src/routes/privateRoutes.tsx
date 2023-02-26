@@ -2,14 +2,17 @@ import { Icon } from '@app/components/Icon';
 import { ConstructionScreen } from '@app/screens/Construction';
 import { DetailsScreen } from '@app/screens/Details';
 import { HomeScreen } from '@app/screens/Home';
+import { ResumeScreen } from '@app/screens/Resume';
 import { theme } from '@app/styles/theme';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import Ionicons from '@expo/vector-icons/Ionicons';
 
 export type RootBottomParamList = {
   Home: undefined;
   Trade: undefined;
   Portfolio: undefined;
+  Resume: undefined;
 };
 
 export type PrivateRootStackParamList = {
@@ -70,6 +73,21 @@ const BottomTabs = () => {
           tabBarIcon: ({ focused }) => (
             <Icon
               name="portfolio"
+              color={focused ? theme.colors.frenchViolet : theme.colors.black}
+            />
+          ),
+        }}
+      />
+
+      <Tab.Screen
+        name="Resume"
+        component={ResumeScreen}
+        options={{
+          tabBarLabel: 'Resume',
+          tabBarIcon: ({ focused }) => (
+            <Ionicons
+              name="document-attach"
+              size={25}
               color={focused ? theme.colors.frenchViolet : theme.colors.black}
             />
           ),

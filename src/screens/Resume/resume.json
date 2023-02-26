@@ -1,0 +1,22 @@
+{
+  "name": "Wallyson Galvão",
+  "photo": "https://github.com/WallysonGalvao.png",
+  "bio": "Graduado em Análise e Desenvolvimento de Sistemas pelo IESB, pós-graduado em Desenvolvimento para Dispositivos Móveis (Android) pela UnyLeya. \n\nDesde 2016 trabalhando em projetos de TI e nos últimos anos com foco no ecossistema React, atualmente desenvolvendo para a Sportidia (SevenApps), utilizando React Native. \n\nExperiência em construção de aplicativos móveis, criando e consumindo APIs para integrar com outras aplicações via REST, orientação a qualidade de código, documentação, escrita de testes, conhecimento dos detalhes no fluxo de publicação de apps para App Store e Play Store.",
+  "socials": [
+    {
+      "name": "Linkedin",
+      "url": "https://www.linkedin.com/in/wallyson-galvao/",
+      "icon": "social-linkedin"
+    },
+    {
+      "name": "Github",
+      "url": "https://github.com/WallysonGalvao",
+      "icon": "social-github"
+    },
+    {
+      "name": "Medium",
+      "url": "https://medium.com/@wallyson.galvao",
+      "icon": "social-medium"
+    }
+  ]
+}
