@@ -1,12 +1,11 @@
-import { Button } from '@app/components/Button';
-import Input from '@app/components/Input';
-import { useFormik } from 'formik';
 import { useRef } from 'react';
 import { TextInput } from 'react-native';
 
-import { SafeAreaView } from 'react-native-safe-area-context';
-import { formSettings } from './settings';
+import { Button } from '@app/components/Button';
+import Input from '@app/components/Input';
+import { useFormik } from 'formik';
 
+import { formSettings } from './settings';
 import * as S from './styles';
 
 export const LoginScreen = () => {
@@ -23,8 +22,7 @@ export const LoginScreen = () => {
   const handleSignUp = () => {};
 
   return (
-    <SafeAreaView
-      style={{ backgroundColor: 'white', flex: 1, paddingHorizontal: 15 }}>
+    <S.SafeAreaView>
       <S.LoginText>Login</S.LoginText>
 
       <Input
@@ -58,6 +56,6 @@ export const LoginScreen = () => {
       <S.NotRegistered onPress={handleSignUp}>
         Don't have an account? <S.SignUpText>Sign up</S.SignUpText> here
       </S.NotRegistered>
-    </SafeAreaView>
+    </S.SafeAreaView>
   );
 };

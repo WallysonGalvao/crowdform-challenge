@@ -1,4 +1,13 @@
+import { SafeAreaView as RNSAContext } from 'react-native-safe-area-context';
 import styled, { css } from 'styled-components/native';
+
+export const SafeAreaView = styled(RNSAContext)`
+  ${({ theme }) => css`
+    flex: 1;
+    padding-horizontal: ${theme.metrics.px(15)}px;
+    background-color: ${theme.colors.white};
+  `}
+`;
 
 export const LoginText = styled.Text`
   ${({ theme }) => css`
