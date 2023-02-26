@@ -1,4 +1,5 @@
 import { Platform } from 'react-native';
+
 import { SafeAreaView as RNSAContext } from 'react-native-safe-area-context';
 import styled, { css } from 'styled-components/native';
 

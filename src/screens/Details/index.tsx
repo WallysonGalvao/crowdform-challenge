@@ -1,11 +1,12 @@
 import { useCallback, useState } from 'react';
-import { Dimensions, Platform } from 'react-native';
+import { Dimensions } from 'react-native';
 
 import { Button } from '@app/components/Button';
 import { Icon } from '@app/components/Icon';
 import { ScreenHeader } from '@app/components/ScreenHeader';
 import { Separator } from '@app/components/Separator';
 import { Text } from '@app/components/Text';
+import { PrivateRootStackParamList } from '@app/routes/privateRoutes';
 import {
   FILTERS,
   FUND_CARDS,
@@ -13,12 +14,9 @@ import {
   INFO_STATS,
   InfoStatsProps,
 } from '@app/utils/data';
-
-import * as S from './styles';
 import { RouteProp, useRoute } from '@react-navigation/native';
 
-import { PrivateRootStackParamList } from '@app/routes/privateRoutes';
-import { theme } from '@app/styles/theme';
+import * as S from './styles';
 
 const { width } = Dimensions.get('screen');
 

@@ -4,10 +4,10 @@ import { DetailsScreen } from '@app/screens/Details';
 import { HomeScreen } from '@app/screens/Home';
 import { ResumeScreen } from '@app/screens/Resume';
 import { theme } from '@app/styles/theme';
+import { FundsProps } from '@app/utils/data';
+import Ionicons from '@expo/vector-icons/Ionicons';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import Ionicons from '@expo/vector-icons/Ionicons';
-import { FundsProps } from '@app/utils/data';
 
 export type RootBottomParamList = {
   Home: undefined;

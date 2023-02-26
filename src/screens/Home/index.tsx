@@ -1,7 +1,6 @@
-import { Icon, IconNames } from '@app/components/Icon';
+import { Icon } from '@app/components/Icon';
 import { Separator } from '@app/components/Separator';
 import { Text } from '@app/components/Text';
-import { colors } from '@app/styles/colors';
 import { FUNDS, FundsProps } from '@app/utils/data';
 import { useNavigation } from '@react-navigation/native';
 

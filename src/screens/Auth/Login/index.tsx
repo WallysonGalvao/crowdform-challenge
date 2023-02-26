@@ -1,15 +1,15 @@
 import { useMemo, useRef } from 'react';
 import { TextInput } from 'react-native';
-import Toast from 'react-native-toast-message';
 
 import { Button } from '@app/components/Button';
 import Input from '@app/components/Input';
+import { useAuthStore } from '@app/services/stores/auth';
 import { useNavigation } from '@react-navigation/native';
 import { useFormik } from 'formik';
+import Toast from 'react-native-toast-message';
 
 import { formSettings } from './settings';
 import * as S from './styles';
-import { useAuthStore } from '@app/services/stores/auth';
 
 export const LoginScreen = () => {
   const { navigate } = useNavigation();
@@ -26,8 +26,8 @@ export const LoginScreen = () => {
       const found = users?.some(user => user.email === data.email);
 
       Toast.show({
-        type: !!found ? 'success' : 'error',
-        text1: !!found ? 'User logged in successfully' : 'User not found!',
+        type: found ? 'success' : 'error',
+        text1: found ? 'User logged in successfully' : 'User not found!',
       });
 
       setToken(!!found);

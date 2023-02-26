@@ -1,17 +1,17 @@
 import { useMemo, useRef, useState } from 'react';
-import { ScrollView, TextInput } from 'react-native';
-import Toast from 'react-native-toast-message';
+import { TextInput } from 'react-native';
 
 import { Button } from '@app/components/Button';
 import Checkbox from '@app/components/Checkbox';
 import Input from '@app/components/Input';
+import { ScreenHeader } from '@app/components/ScreenHeader';
+import { useAuthStore } from '@app/services/stores/auth';
 import { useNavigation } from '@react-navigation/native';
 import { useFormik } from 'formik';
+import Toast from 'react-native-toast-message';
 
 import { formSettings } from './settings';
 import * as S from './styles';
-import { useAuthStore } from '@app/services/stores/auth';
-import { ScreenHeader } from '@app/components/ScreenHeader';
 
 export const SignUpScreen = () => {
   const { goBack } = useNavigation();
@@ -30,7 +30,7 @@ export const SignUpScreen = () => {
     validateOnBlur: false,
     onSubmit: async data => {
       const found = users?.some(user => user.email === data.email);
-      if (!!found) {
+      if (found) {
         Toast.show({
           type: 'info',
           text1: 'User already registered',

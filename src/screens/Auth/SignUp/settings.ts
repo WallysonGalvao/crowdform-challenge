@@ -1,5 +1,4 @@
 import { UserProps } from '@app/services/stores/auth';
-
 import * as Yup from 'yup';
 
 export const formSettings = {

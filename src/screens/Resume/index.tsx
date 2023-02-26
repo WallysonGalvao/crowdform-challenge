@@ -1,12 +1,11 @@
-import React from 'react';
 import { Linking, ScrollView } from 'react-native';
-import Foundation from '@expo/vector-icons/Foundation';
 
-import * as S from './styles';
-
-import resume from './resume.json';
 import { Button } from '@app/components/Button';
 import { useAuthStore } from '@app/services/stores/auth';
+import Foundation from '@expo/vector-icons/Foundation';
+
+import resume from './resume.json';
+import * as S from './styles';
 
 export const ResumeScreen = () => {
   const handleSocial = (url: string) => Linking.openURL(url);
