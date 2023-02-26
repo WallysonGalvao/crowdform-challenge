@@ -25,6 +25,8 @@ type AuthStore = {
 
   users: UserProps[];
   setUsers: (users: UserProps) => void;
+
+  reset: () => void;
 };
 
 export const useAuthStore = create<AuthStore>()(

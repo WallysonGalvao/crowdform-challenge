@@ -36,16 +36,16 @@ export const SubHeaderPercentage = styled.View`
 export const FlutuantTextTop = styled.View`
   ${({ theme }) => css`
     position: absolute;
-    top: ${theme.metrics.px(Platform.OS === 'android' ? 70 : 60)}px;
-    left: ${theme.metrics.px(Platform.OS === 'android' ? 217 : 205)}px;
+    top: ${theme.metrics.px(Platform.OS === 'android' ? -5 : 0)}px;
+    left: ${theme.metrics.px(Platform.OS === 'android' ? 190 : 205)}px;
   `}
 `;
 
 export const FlutuantTextBottom = styled.View`
   ${({ theme }) => css`
     position: absolute;
-    top: ${theme.metrics.px(Platform.OS === 'android' ? 255 : 240)}px;
-    left: ${theme.metrics.px(45)}px;
+    top: ${theme.metrics.px(Platform.OS === 'android' ? 160 : 175)}px;
+    left: ${theme.metrics.px(40)}px;
   `}
 `;
 
@@ -55,7 +55,9 @@ export const FilterContainer = styled.View`
     align-items: center;
     justify-content: space-between;
     padding-horizontal: ${theme.metrics.px(15)}px;
-    padding-vertical: ${theme.metrics.px(15)}px;
+    padding-vertical: ${theme.metrics.px(
+      Platform.OS === 'android' ? 35 : 20,
+    )}px;
   `}
 `;
 
@@ -213,4 +215,9 @@ export const PortfolioRight = styled.View`
 
 export const ButtonContainer = styled.View`
   width: 48%;
+`;
+
+export const FullGraphContainer = styled.View`
+  align-items: center;
+  align-self: center;
 `;

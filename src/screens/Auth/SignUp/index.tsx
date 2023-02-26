@@ -1,5 +1,5 @@
 import { useMemo, useRef, useState } from 'react';
-import { TextInput } from 'react-native';
+import { ScrollView, TextInput } from 'react-native';
 import Toast from 'react-native-toast-message';
 
 import { Button } from '@app/components/Button';
@@ -59,71 +59,73 @@ export const SignUpScreen = () => {
     <S.SafeAreaView>
       <ScreenHeader title="Create your account" />
 
-      <Input
-        autoComplete="username"
-        label="First Name"
-        value={values.firstname}
-        error={errors.firstname}
-        placeholder="Type your first name"
-        returnKeyType="next"
-        onChangeText={(value: string) => setFieldValue('firstname', value)}
-        onSubmitEditing={() => lastnameRef?.current?.focus()}
-      />
+      <S.ScrollView>
+        <Input
+          autoComplete="username"
+          label="First Name"
+          value={values.firstname}
+          error={errors.firstname}
+          placeholder="Type your first name"
+          returnKeyType="next"
+          onChangeText={(value: string) => setFieldValue('firstname', value)}
+          onSubmitEditing={() => lastnameRef?.current?.focus()}
+        />
 
-      <Input
-        ref={lastnameRef}
-        autoComplete="name-middle"
-        label="Last Name"
-        value={values.lastname}
-        error={errors.lastname}
-        placeholder="Type your last name"
-        returnKeyType="next"
-        onChangeText={(value: string) => setFieldValue('lastname', value)}
-        onSubmitEditing={() => emailRef?.current?.focus()}
-      />
+        <Input
+          ref={lastnameRef}
+          autoComplete="name-middle"
+          label="Last Name"
+          value={values.lastname}
+          error={errors.lastname}
+          placeholder="Type your last name"
+          returnKeyType="next"
+          onChangeText={(value: string) => setFieldValue('lastname', value)}
+          onSubmitEditing={() => emailRef?.current?.focus()}
+        />
 
-      <Input
-        ref={emailRef}
-        autoComplete="email"
-        autoCapitalize="none"
-        label="E-mail"
-        value={values.email}
-        error={errors.email}
-        placeholder="Type your e-mail"
-        keyboardType="email-address"
-        returnKeyType="next"
-        onChangeText={(value: string) => setFieldValue('email', value)}
-        onSubmitEditing={() => passwordRef?.current?.focus()}
-      />
+        <Input
+          ref={emailRef}
+          autoComplete="email"
+          autoCapitalize="none"
+          label="E-mail"
+          value={values.email}
+          error={errors.email}
+          placeholder="Type your e-mail"
+          keyboardType="email-address"
+          returnKeyType="next"
+          onChangeText={(value: string) => setFieldValue('email', value)}
+          onSubmitEditing={() => passwordRef?.current?.focus()}
+        />
 
-      <Input
-        ref={passwordRef}
-        secureTextEntry
-        autoComplete="off"
-        label="Password"
-        value={values.password}
-        error={errors.password}
-        placeholder="Type your password"
-        returnKeyType="done"
-        onChangeText={value => setFieldValue('password', value)}
-        onSubmitEditing={() => handleSubmit()}
-      />
+        <Input
+          ref={passwordRef}
+          secureTextEntry
+          autoComplete="off"
+          label="Password"
+          value={values.password}
+          error={errors.password}
+          placeholder="Type your password"
+          returnKeyType="done"
+          onChangeText={value => setFieldValue('password', value)}
+          onSubmitEditing={() => handleSubmit()}
+        />
 
-      <Checkbox
-        text="I am over 18 years of age and I have read and agree to the Terms of Service and Privacy Policy."
-        highlightTexts={['Terms of Service', 'Privacy Policy']}
-        onPressHighlight={onPressHighlight}
-        checked={checked}
-        onPress={() => setChecked(!checked)}
-      />
+        <Checkbox
+          text="I am over 18 years of age and I have read and agree to the Terms of Service and Privacy Policy."
+          highlightTexts={['Terms of Service', 'Privacy Policy']}
+          onPressHighlight={onPressHighlight}
+          checked={checked}
+          onPress={() => setChecked(!checked)}
+        />
 
-      <Button onPress={() => handleSubmit()} disabled={disableButton}>
-        Create account
-      </Button>
+        <Button onPress={() => handleSubmit()} disabled={disableButton}>
+          Create account
+        </Button>
 
-      <S.NotRegistered onPress={goBack}>
-        Already have an account? <S.SignUpText>Log in here</S.SignUpText>
-      </S.NotRegistered>
+        <S.NotRegistered onPress={goBack}>
+          Already have an account? <S.SignUpText>Log in here</S.SignUpText>
+        </S.NotRegistered>
+      </S.ScrollView>
     </S.SafeAreaView>
   );
 };

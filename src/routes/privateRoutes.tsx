@@ -7,6 +7,7 @@ import { theme } from '@app/styles/theme';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import Ionicons from '@expo/vector-icons/Ionicons';
+import { FundsProps } from '@app/utils/data';
 
 export type RootBottomParamList = {
   Home: undefined;
@@ -17,7 +18,7 @@ export type RootBottomParamList = {
 
 export type PrivateRootStackParamList = {
   BottomTabs: undefined;
-  Details: undefined;
+  Details: { fund: FundsProps };
 };
 
 const BottomTabs = () => {

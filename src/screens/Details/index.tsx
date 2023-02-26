@@ -1,5 +1,5 @@
 import { useCallback, useState } from 'react';
-import { Dimensions } from 'react-native';
+import { Dimensions, Platform } from 'react-native';
 
 import { Button } from '@app/components/Button';
 import { Icon } from '@app/components/Icon';
@@ -15,10 +15,19 @@ import {
 } from '@app/utils/data';
 
 import * as S from './styles';
+import { RouteProp, useRoute } from '@react-navigation/native';
+
+import { PrivateRootStackParamList } from '@app/routes/privateRoutes';
+import { theme } from '@app/styles/theme';
 
 const { width } = Dimensions.get('screen');
 
+type DetailsScreenRouteProp = RouteProp<PrivateRootStackParamList, 'Details'>;
+
 export const DetailsScreen = () => {
+  const { params } = useRoute<DetailsScreenRouteProp>();
+  const { fund } = params;
+
   const [filterSelected, setFilterSelected] = useState(1);
   const [menuSelected, setMenuSelected] = useState(0);
 
@@ -41,23 +50,26 @@ export const DetailsScreen = () => {
 
   return (
     <S.SafeAreaView>
-      <ScreenHeader title="Wind Fund" subTitle="WFND" />
+      <ScreenHeader title={fund.label} subTitle={fund.shortName} />
       <Separator />
 
       <S.ScrollView>
         <S.SubHeader>
           <S.SubHeaderLeft>
             <Text fontSize={24} fontFamily="semiBold">
-              $18.23
+              {fund.value}
             </Text>
             <S.SubHeaderPercentage>
               <Icon
-                name="percentage_up"
+                name={fund.iconPercentage}
                 width={13}
                 height={13}
                 style={{ marginRight: 5 }}
               />
-              <Text color="caribbeanGreen">3.51% ($1.21)</Text>
+              <Text
+                color={
+                  fund.percetageColor
+                }>{`${fund.percetageValue} ($1.21)`}</Text>
             </S.SubHeaderPercentage>
           </S.SubHeaderLeft>
           <Text fontSize={24} fontFamily="semiBold">
@@ -65,15 +77,20 @@ export const DetailsScreen = () => {
           </Text>
         </S.SubHeader>
 
-        <S.FlutuantTextTop>
-          <Text color="quickSilver">$19.02</Text>
-        </S.FlutuantTextTop>
-
-        <Icon name="full_graph" width={width - 15} height={width / 2} />
-
-        <S.FlutuantTextBottom>
-          <Text color="quickSilver">$17.66</Text>
-        </S.FlutuantTextBottom>
+        <S.FullGraphContainer>
+          <S.FlutuantTextTop>
+            <Text color="quickSilver">$19.02</Text>
+          </S.FlutuantTextTop>
+          <Icon
+            name="full_graph"
+            width={width - 15}
+            height={width / 2}
+            color={fund.graphColor}
+          />
+          <S.FlutuantTextBottom>
+            <Text color="quickSilver">$17.66</Text>
+          </S.FlutuantTextBottom>
+        </S.FullGraphContainer>
 
         <S.FilterContainer>
           {FILTERS.map((filter, index) => {

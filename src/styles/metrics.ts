@@ -17,4 +17,11 @@ const px = (valuePx: number): number => {
   return screenPixel;
 };
 
-export const metrics = { px };
+const hp = heightPercent => {
+  const screenHeight = Dimensions.get('window').height;
+  return PixelRatio.roundToNearestPixel(
+    (screenHeight * parseFloat(heightPercent)) / 100,
+  );
+};
+
+export const metrics = { px, hp };

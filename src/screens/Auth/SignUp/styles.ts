@@ -4,10 +4,17 @@ import styled, { css } from 'styled-components/native';
 export const SafeAreaView = styled(RNSAContext)`
   ${({ theme }) => css`
     flex: 1;
-    padding-horizontal: ${theme.metrics.px(15)}px;
+    /* padding-horizontal: ${theme.metrics.px(15)}px; */
     background-color: ${theme.colors.white};
   `}
 `;
+
+export const ScrollView = styled.ScrollView.attrs(({ theme }) => ({
+  showsVerticalScrollIndicator: false,
+  contentContainerStyle: {
+    paddingHorizontal: theme.metrics.px(15),
+  },
+}))``;
 
 export const LoginText = styled.Text`
   ${({ theme }) => css`

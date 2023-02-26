@@ -12,8 +12,3 @@ declare global {
         PublicRootStackParamList {}
   }
 }
-
-export type RouteProps =
-  | keyof RootBottomParamList
-  | keyof PrivateRootStackParamList
-  | keyof PublicRootStackParamList;

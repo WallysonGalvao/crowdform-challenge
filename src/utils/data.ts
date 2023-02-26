@@ -5,6 +5,7 @@ import climeworks from '@app/assets/images/climeworks.png';
 import image1 from '@app/assets/images/image1.png';
 import image2 from '@app/assets/images/image2.png';
 import { IconNames } from '@app/components/Icon';
+import { colors } from '@app/styles/colors';
 
 export type InfoStatsProps = {
   label: string;
@@ -18,6 +19,19 @@ export type FundCardProps = {
   description: string;
   fundImage: ImageSourcePropType;
   image: ImageSourcePropType;
+};
+
+export type FundsProps = {
+  id: number;
+  shortName: string;
+  iconName: IconNames;
+  iconGraph: IconNames;
+  iconPercentage: IconNames;
+  label: string;
+  value: string;
+  percetageValue: string;
+  percetageColor: keyof typeof colors;
+  graphColor: '#0FDF8F' | '#EE8688';
 };
 
 export const FILTERS = [
@@ -110,3 +124,42 @@ export const USER = {
   email: 'john@doe.com',
   password: '12345678',
 };
+
+export const FUNDS: FundsProps[] = [
+  {
+    id: 0,
+    iconName: 'wind',
+    shortName: 'WFND',
+    iconGraph: 'wind_graph',
+    label: 'Wind Fund',
+    value: '$1032.23',
+    percetageValue: '3.51%',
+    iconPercentage: 'percentage_up',
+    percetageColor: 'caribbeanGreen',
+    graphColor: '#0FDF8F',
+  },
+  {
+    id: 1,
+    iconName: 'solar',
+    shortName: 'SFND',
+    iconGraph: 'solar_graph',
+    label: 'Solar Fund',
+    value: '$986.61',
+    percetageValue: '0.13%',
+    iconPercentage: 'percentage_down',
+    percetageColor: 'lightCoral',
+    graphColor: '#EE8688',
+  },
+  {
+    id: 2,
+    iconName: 'nature',
+    shortName: 'NFND',
+    iconGraph: 'nature_graph',
+    label: 'Nature Fund',
+    value: '$1122.95',
+    percetageValue: '5.31%',
+    iconPercentage: 'percentage_up',
+    percetageColor: 'caribbeanGreen',
+    graphColor: '#0FDF8F',
+  },
+];
