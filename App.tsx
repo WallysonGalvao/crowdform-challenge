@@ -8,7 +8,7 @@ import {
   Sora_600SemiBold,
 } from '@expo-google-fonts/sora';
 
-import { PublicRoutes } from './src/routes';
+import { PrivateRoutes, PublicRoutes } from './src/routes';
 
 export default function App() {
   const [fontsLoaded] = useFonts({
@@ -24,7 +24,7 @@ export default function App() {
     <NavigationContainer>
       <ThemeProvider theme={theme}>
         <StatusBar style="auto" />
-        <PublicRoutes />
+        <PrivateRoutes />
       </ThemeProvider>
     </NavigationContainer>
   );

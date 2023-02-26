@@ -12,13 +12,14 @@ type IconProps = SvgProps & {
   height?: number;
 };
 
-const SIZE = 24;
+const SIZE = 20;
 
 export const Icon = ({
   name,
   width,
   height,
   color = theme.colors.black,
+  ...props
 }: IconProps) => {
   const IconSVG = useMemo(
     () => icons[name.toUpperCase() as Uppercase<IconNames>],
@@ -28,5 +29,5 @@ export const Icon = ({
   const rWidth = useMemo(() => theme.metrics.px(width || SIZE), [width]);
   const rHeight = useMemo(() => theme.metrics.px(height || SIZE), [height]);
 
-  return <IconSVG width={rWidth} height={rHeight} color={color} />;
+  return <IconSVG width={rWidth} height={rHeight} color={color} {...props} />;
 };
