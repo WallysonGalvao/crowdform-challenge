@@ -7,8 +7,10 @@ import { useFormik } from 'formik';
 
 import { formSettings } from './settings';
 import * as S from './styles';
+import { useNavigation } from '@react-navigation/native';
 
 export const LoginScreen = () => {
+  const { navigate } = useNavigation();
   const passwordRef = useRef<TextInput | null>(null);
 
   const { values, setFieldValue, errors, handleSubmit } = useFormik({
@@ -19,7 +21,7 @@ export const LoginScreen = () => {
     onSubmit: async data => console.log({ data }),
   });
 
-  const handleSignUp = () => {};
+  const handleSignUp = () => navigate('SignUp');
 
   return (
     <S.SafeAreaView>
