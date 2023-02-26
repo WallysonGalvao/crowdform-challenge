@@ -1,5 +1,6 @@
 import { Icon } from '@app/components/Icon';
 import { ConstructionScreen } from '@app/screens/Construction';
+import { DetailsScreen } from '@app/screens/Details';
 import { HomeScreen } from '@app/screens/Home';
 
 import { theme } from '@app/styles/theme';
@@ -14,6 +15,7 @@ export type RootBottomParamList = {
 
 export type PrivateRootStackParamList = {
   BottomTabs: undefined;
+  Details: undefined;
 };
 
 const BottomTabs = () => {
@@ -88,6 +90,7 @@ const Routes = () => {
         headerShown: false,
       }}>
       <Stack.Screen name="BottomTabs" component={BottomTabs} />
+      <Stack.Screen name="Details" component={DetailsScreen} />
     </Stack.Navigator>
   );
 };

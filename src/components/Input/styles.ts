@@ -12,7 +12,7 @@ export const Content = styled.View<{ error: boolean }>`
     align-items: center;
     border-radius: ${theme.metrics.px(4)}px;
     padding: ${theme.metrics.px(12)}px;
-    background-color: ${theme.colors.gray};
+    background-color: ${theme.colors.cultured};
     margin-bottom: ${theme.metrics.px(error ? 0 : 10)}px;
   `}
 `;

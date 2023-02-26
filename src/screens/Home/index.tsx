@@ -2,6 +2,7 @@ import { Icon, IconNames } from '@app/components/Icon';
 import { Separator } from '@app/components/Separator';
 import { Text } from '@app/components/Text';
 import { colors } from '@app/styles/colors';
+import { useNavigation } from '@react-navigation/native';
 
 import * as S from './styles';
 
@@ -50,6 +51,10 @@ const FUNDS: FundsProps[] = [
 ];
 
 export const HomeScreen = () => {
+  const { navigate } = useNavigation();
+
+  const handleFund = () => navigate('Details');
+
   return (
     <S.SafeAreaView edges={['top']}>
       <S.Header>
@@ -111,7 +116,7 @@ export const HomeScreen = () => {
           <S.FundsContainer>
             {FUNDS.map(fund => {
               return (
-                <S.FundsContent key={fund.id}>
+                <S.FundsContent key={fund.id} onPress={handleFund}>
                   <Icon
                     name={fund.iconName}
                     width={14}
