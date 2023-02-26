@@ -1,4 +1,5 @@
 import { Icon } from '@app/components/Icon';
+import { ConstructionScreen } from '@app/screens/Construction';
 import { HomeScreen } from '@app/screens/Home';
 
 import { theme } from '@app/styles/theme';
@@ -24,7 +25,7 @@ const BottomTabs = () => {
       screenOptions={{
         headerShown: false,
         tabBarActiveTintColor: theme.colors.frenchViolet,
-        tabBarInactiveTintColor: theme.colors.gray,
+        tabBarInactiveTintColor: theme.colors.black,
         tabBarItemStyle: {
           backgroundColor: theme.colors.white,
           marginTop: theme.metrics.px(10),
@@ -39,11 +40,36 @@ const BottomTabs = () => {
         component={HomeScreen}
         options={{
           tabBarLabel: 'Home',
-
           tabBarIcon: ({ focused }) => (
             <Icon
               name="home"
-              color={focused ? theme.colors.frenchViolet : theme.colors.gray}
+              color={focused ? theme.colors.frenchViolet : theme.colors.black}
+            />
+          ),
+        }}
+      />
+      <Tab.Screen
+        name="Trade"
+        component={ConstructionScreen}
+        options={{
+          tabBarLabel: 'Trade',
+          tabBarIcon: ({ focused }) => (
+            <Icon
+              name="trade"
+              color={focused ? theme.colors.frenchViolet : theme.colors.black}
+            />
+          ),
+        }}
+      />
+      <Tab.Screen
+        name="Portfolio"
+        component={ConstructionScreen}
+        options={{
+          tabBarLabel: 'Portfolio',
+          tabBarIcon: ({ focused }) => (
+            <Icon
+              name="portfolio"
+              color={focused ? theme.colors.frenchViolet : theme.colors.black}
             />
           ),
         }}
