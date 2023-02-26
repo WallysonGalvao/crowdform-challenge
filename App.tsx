@@ -1,20 +1,31 @@
+import { theme } from '@app/styles/theme';
+import { NavigationContainer } from '@react-navigation/native';
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { ThemeProvider } from 'styled-components';
+import {
+  useFonts,
+  Sora_400Regular,
+  Sora_600SemiBold,
+} from '@expo-google-fonts/sora';
+
+import { PublicRoutes } from './src/routes';
 
 export default function App() {
+  const [fontsLoaded] = useFonts({
+    regular: Sora_400Regular,
+    semiBold: Sora_600SemiBold,
+  });
+
+  if (!fontsLoaded) {
+    return null;
+  }
+
   return (
-    <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <NavigationContainer>
+      <ThemeProvider theme={theme}>
+        <StatusBar style="auto" />
+        <PublicRoutes />
+      </ThemeProvider>
+    </NavigationContainer>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
