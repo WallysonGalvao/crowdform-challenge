@@ -3,11 +3,11 @@ import { TextInput } from 'react-native';
 
 import { Button } from '@app/components/Button';
 import Input from '@app/components/Input';
+import { useNavigation } from '@react-navigation/native';
 import { useFormik } from 'formik';
 
 import { formSettings } from './settings';
 import * as S from './styles';
-import { useNavigation } from '@react-navigation/native';
 
 export const LoginScreen = () => {
   const { navigate } = useNavigation();

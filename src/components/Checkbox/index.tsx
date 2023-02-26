@@ -1,4 +1,3 @@
-import { colors } from '@app/styles/colors';
 import * as S from './styles';
 
 type CheckboxProps = {

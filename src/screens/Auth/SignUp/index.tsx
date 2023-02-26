@@ -2,13 +2,13 @@ import { useRef, useState } from 'react';
 import { TextInput } from 'react-native';
 
 import { Button } from '@app/components/Button';
+import Checkbox from '@app/components/Checkbox';
 import Input from '@app/components/Input';
+import { useNavigation } from '@react-navigation/native';
 import { useFormik } from 'formik';
 
 import { formSettings } from './settings';
 import * as S from './styles';
-import { useNavigation } from '@react-navigation/native';
-import Checkbox from '@app/components/Checkbox';
 
 export const SignUpScreen = () => {
   const { goBack } = useNavigation();
@@ -25,8 +25,6 @@ export const SignUpScreen = () => {
     validateOnBlur: false,
     onSubmit: async data => console.log({ data }),
   });
-
-  const handleSignUp = () => {};
 
   const onPressHighlight = (highlight: string) => console.log({ highlight });
 

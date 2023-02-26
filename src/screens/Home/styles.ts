@@ -26,18 +26,16 @@ export const IconRounded = styled.View`
     width: ${theme.metrics.px(32)}px;
     height: ${theme.metrics.px(32)}px;
     border-radius: ${theme.metrics.px(16)}px;
-    background-color: ${theme.colors.gray};
+    background-color: ${theme.colors.cultured};
     align-items: center;
     justify-content: center;
   `}
 `;
 
 export const HeaderTextContainer = styled.View`
-  ${({ theme }) => css`
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-  `}
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
 `;
 
 export const SubHeaderContainer = styled.View`
@@ -91,7 +89,7 @@ export const FundsContainer = styled.ScrollView.attrs(({ theme }) => ({
   },
 }))``;
 
-export const FundsContent = styled.View`
+export const FundsContent = styled.TouchableOpacity`
   ${({ theme }) => css`
     width: ${theme.metrics.px(140)}px;
     height: ${theme.metrics.px(145)}px;
@@ -130,7 +128,7 @@ export const Item = styled.View`
     width: ${theme.metrics.px(159)}px;
     border-radius: ${theme.metrics.px(10)}px;
     padding: ${theme.metrics.px(10)}px;
-    background-color: ${theme.colors.gray};
+    background-color: ${theme.colors.cultured};
   `}
 `;
 
