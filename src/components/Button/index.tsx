@@ -17,12 +17,14 @@ export const Button = ({
   buttonColor,
   borderColor,
   onPress,
+  ...props
 }: CustomButtonProps) => {
   return (
     <S.ButtonContainer
       buttonColor={buttonColor}
       borderColor={borderColor}
-      onPress={onPress}>
+      onPress={onPress}
+      {...props}>
       <S.ButtonTitle textColor={textColor}>{children}</S.ButtonTitle>
     </S.ButtonContainer>
   );

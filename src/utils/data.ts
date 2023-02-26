@@ -103,3 +103,10 @@ export const FUND_CARDS: FundCardProps[] = [
     fundImage: climeworks,
   },
 ];
+
+export const USER = {
+  firstname: 'John',
+  lastname: 'Doe',
+  email: 'john@doe.com',
+  password: '12345678',
+};

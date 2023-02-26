@@ -18,7 +18,7 @@ export const ButtonContainer = styled.TouchableHighlight.attrs<ButtonContainerPr
     ),
   }),
 )<ButtonContainerProps>`
-  ${({ theme, buttonColor, borderColor }) => css`
+  ${({ theme, buttonColor, borderColor, disabled }) => css`
     width: 100%;
     height: ${theme.metrics.px(LAYOUT.INPUT.HEIGHT)}px;
     border-radius: ${theme.metrics.px(4)}px;
@@ -30,6 +30,11 @@ export const ButtonContainer = styled.TouchableHighlight.attrs<ButtonContainerPr
     css`
       border-width: 1px;
       border-color: ${theme.colors[borderColor]};
+    `}
+
+    ${disabled &&
+    css`
+      background-color: ${theme.colors.quickSilver};
     `}
   `}
 `;

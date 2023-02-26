@@ -1,3 +1,4 @@
+import { USER } from '@app/utils/data';
 import * as Yup from 'yup';
 
 type LoginParams = {
@@ -7,8 +8,8 @@ type LoginParams = {
 
 export const formSettings = {
   initialValues: {
-    email: 'john@doe.com',
-    password: '123456',
+    email: USER.email,
+    password: USER.password,
   } as LoginParams,
   validationSchema: Yup.object().shape({
     email: Yup.string().email().required(),

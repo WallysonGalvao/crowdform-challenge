@@ -1,5 +1,6 @@
-import { useRef } from 'react';
+import { useMemo, useRef } from 'react';
 import { TextInput } from 'react-native';
+import Toast from 'react-native-toast-message';
 
 import { Button } from '@app/components/Button';
 import Input from '@app/components/Input';
@@ -8,18 +9,37 @@ import { useFormik } from 'formik';
 
 import { formSettings } from './settings';
 import * as S from './styles';
+import { useAuthStore } from '@app/services/stores/auth';
 
 export const LoginScreen = () => {
   const { navigate } = useNavigation();
   const passwordRef = useRef<TextInput | null>(null);
+
+  const { users, setToken } = useAuthStore();
 
   const { values, setFieldValue, errors, handleSubmit } = useFormik({
     initialValues: formSettings.initialValues,
     validationSchema: formSettings.validationSchema,
     validateOnChange: false,
     validateOnBlur: false,
-    onSubmit: async data => console.log({ data }),
+    onSubmit: async data => {
+      const found = users?.some(user => user.email === data.email);
+
+      Toast.show({
+        type: !!found ? 'success' : 'error',
+        text1: !!found ? 'User logged in successfully' : 'User not found!',
+      });
+
+      setToken(!!found);
+    },
   });
+
+  const disableButton = useMemo(
+    () =>
+      JSON.stringify(values) === JSON.stringify(formSettings.initialValues) ||
+      Object.keys(errors)?.length !== 0,
+    [values, errors],
+  );
 
   const handleSignUp = () => navigate('SignUp');
 
@@ -53,7 +73,9 @@ export const LoginScreen = () => {
         onSubmitEditing={() => handleSubmit()}
       />
 
-      <Button onPress={() => handleSubmit()}>Login</Button>
+      <Button onPress={() => handleSubmit()} disabled={disableButton}>
+        Login
+      </Button>
 
       <S.NotRegistered onPress={handleSignUp}>
         Don't have an account? <S.SignUpText>Sign up</S.SignUpText> here

@@ -1,14 +1,9 @@
+import { UserProps } from '@app/services/stores/auth';
+
 import * as Yup from 'yup';
 
-type SignUpParams = {
-  firstname: string;
-  lastname: string;
-  email: string;
-  password: string;
-};
-
 export const formSettings = {
-  initialValues: {} as SignUpParams,
+  initialValues: {} as UserProps,
   validationSchema: Yup.object().shape({
     firstname: Yup.string().required(),
     lastname: Yup.string().required(),
