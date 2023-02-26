@@ -15,8 +15,12 @@ export const Wrapper = styled.View`
 `;
 
 export const HeaderTitleContainer = styled.View`
-  width: 100%;
-  align-items: center;
+  ${({ theme }) => css`
+    width: 100%;
+    height: ${theme.metrics.px(40)}px;
+    align-items: center;
+    justify-content: center;
+  `}
 `;
 
 export const BackButton = styled.TouchableOpacity`

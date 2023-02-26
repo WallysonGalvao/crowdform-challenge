@@ -35,10 +35,8 @@ export const LoginScreen = () => {
   });
 
   const disableButton = useMemo(
-    () =>
-      JSON.stringify(values) === JSON.stringify(formSettings.initialValues) ||
-      Object.keys(errors)?.length !== 0,
-    [values, errors],
+    () => Object.keys(errors)?.length !== 0,
+    [errors],
   );
 
   const handleSignUp = () => navigate('SignUp');

@@ -1,3 +1,4 @@
+import { Platform } from 'react-native';
 import { SafeAreaView as RNSAContext } from 'react-native-safe-area-context';
 import styled, { css } from 'styled-components/native';
 
@@ -8,9 +9,12 @@ export const SafeAreaView = styled(RNSAContext)`
   `}
 `;
 
-export const ScrollView = styled.ScrollView.attrs({
+export const ScrollView = styled.ScrollView.attrs(({ theme }) => ({
   showsVerticalScrollIndicator: false,
-})``;
+  contentContainerStyle: {
+    paddingBottom: theme.metrics.px(20),
+  },
+}))``;
 
 export const SubHeader = styled.View`
   ${({ theme }) => css`
@@ -32,15 +36,15 @@ export const SubHeaderPercentage = styled.View`
 export const FlutuantTextTop = styled.View`
   ${({ theme }) => css`
     position: absolute;
-    top: ${theme.metrics.px(60)}px;
-    left: ${theme.metrics.px(205)}px;
+    top: ${theme.metrics.px(Platform.OS === 'android' ? 70 : 60)}px;
+    left: ${theme.metrics.px(Platform.OS === 'android' ? 217 : 205)}px;
   `}
 `;
 
 export const FlutuantTextBottom = styled.View`
   ${({ theme }) => css`
     position: absolute;
-    top: ${theme.metrics.px(240)}px;
+    top: ${theme.metrics.px(Platform.OS === 'android' ? 255 : 240)}px;
     left: ${theme.metrics.px(45)}px;
   `}
 `;
