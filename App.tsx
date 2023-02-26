@@ -1,14 +1,14 @@
-import { theme } from "@app/styles/theme";
-import { NavigationContainer } from "@react-navigation/native";
-import { StatusBar } from "expo-status-bar";
-import { ThemeProvider } from "styled-components";
+import { theme } from '@app/styles/theme';
+import { NavigationContainer } from '@react-navigation/native';
+import { StatusBar } from 'expo-status-bar';
+import { ThemeProvider } from 'styled-components';
 import {
   useFonts,
   Sora_400Regular,
   Sora_600SemiBold,
-} from "@expo-google-fonts/sora";
+} from '@expo-google-fonts/sora';
 
-import { PublicRoutes } from "./src/routes";
+import { PublicRoutes } from './src/routes';
 
 export default function App() {
   const [fontsLoaded] = useFonts({
