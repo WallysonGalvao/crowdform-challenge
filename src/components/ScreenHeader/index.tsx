@@ -15,7 +15,7 @@ export const ScreenHeader = ({ title, subTitle }: ScreenHeaderProps) => {
   return (
     <S.Wrapper>
       <S.BackButton onPress={goBack}>
-        <Icon name="arrow_left" />
+        <Icon name="arrow_left" width={15} height={15} />
       </S.BackButton>
 
       <S.HeaderTitleContainer>
