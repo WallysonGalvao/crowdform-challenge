@@ -1,5 +1,6 @@
-import { colors } from '@app/styles/colors';
 import { TouchableHighlightProps } from 'react-native';
+
+import { colors } from '@app/styles/colors';
 
 import * as S from './styles';
 

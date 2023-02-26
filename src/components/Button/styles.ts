@@ -1,6 +1,7 @@
 import { LAYOUT } from '@app/utils/constants';
 import { lighten } from 'polished';
 import styled, { css } from 'styled-components/native';
+
 import { CustomButtonProps } from '.';
 
 type ButtonTitleProps = Pick<CustomButtonProps, 'textColor'>;

@@ -1,10 +1,10 @@
-import { IconNames } from '@app/components/Icon';
+import { ImageSourcePropType } from 'react-native';
 
-import image1 from '@app/assets/images/image1.png';
-import image2 from '@app/assets/images/image2.png';
 import aspiradac from '@app/assets/images/aspiradac.png';
 import climeworks from '@app/assets/images/climeworks.png';
-import { ImageSourcePropType } from 'react-native';
+import image1 from '@app/assets/images/image1.png';
+import image2 from '@app/assets/images/image2.png';
+import { IconNames } from '@app/components/Icon';
 
 export type InfoStatsProps = {
   label: string;

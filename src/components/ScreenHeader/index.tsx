@@ -1,8 +1,8 @@
 import { useNavigation } from '@react-navigation/native';
-import { Icon } from '../Icon';
-import { Text } from '../Text';
 
 import * as S from './styles';
+import { Icon } from '../Icon';
+import { Text } from '../Text';
 
 type ScreenHeaderProps = {
   title: string;

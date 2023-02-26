@@ -1,3 +1,7 @@
+import { useCallback, useState } from 'react';
+import { Dimensions } from 'react-native';
+
+import { Button } from '@app/components/Button';
 import { Icon } from '@app/components/Icon';
 import { ScreenHeader } from '@app/components/ScreenHeader';
 import { Separator } from '@app/components/Separator';
@@ -6,23 +10,15 @@ import {
   FILTERS,
   FUND_CARDS,
   FUND_MENUS,
-  InfoStatsProps,
   INFO_STATS,
+  InfoStatsProps,
 } from '@app/utils/data';
-import { useNavigation } from '@react-navigation/native';
-import { Fragment, useCallback, useState } from 'react';
-import { Dimensions } from 'react-native';
-
-import image1 from '@app/assets/images/image1.png';
 
 import * as S from './styles';
-import { Button } from '@app/components/Button';
 
 const { width } = Dimensions.get('screen');
 
 export const DetailsScreen = () => {
-  const { goBack } = useNavigation();
-
   const [filterSelected, setFilterSelected] = useState(1);
   const [menuSelected, setMenuSelected] = useState(0);
 
@@ -199,7 +195,9 @@ export const DetailsScreen = () => {
 
           <S.InfoContainer>
             <Text fontSize={12} color="quickSilver">
-              {`Please note that prices are for reference only and may vary at the time of excecuting a buy or sell order. \n\nThe information provided is not investment advice, and should not be used as a recommendation to buy or sell assets.`}
+              {
+                'Please note that prices are for reference only and may vary at the time of excecuting a buy or sell order. \n\nThe information provided is not investment advice, and should not be used as a recommendation to buy or sell assets.'
+              }
             </Text>
           </S.InfoContainer>
           <Button>Buy</Button>

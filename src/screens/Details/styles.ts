@@ -204,9 +204,7 @@ export const PortfolioContainer = styled.View`
 export const PortfolioLeft = styled.View``;
 
 export const PortfolioRight = styled.View`
-  ${({ theme }) => css`
-    align-items: flex-end;
-  `}
+  align-items: flex-end;
 `;
 
 export const ButtonContainer = styled.View`

@@ -163,7 +163,7 @@ export const HomeScreen = () => {
             <S.Item>
               <Text fontFamily="semiBold">Why should you invest here?</Text>
             </S.Item>
-            <S.Item></S.Item>
+            <S.Item />
           </S.ItemContainer>
         </S.Content>
       </S.ScrollView>

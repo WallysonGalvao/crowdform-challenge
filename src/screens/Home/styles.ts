@@ -33,11 +33,9 @@ export const IconRounded = styled.View`
 `;
 
 export const HeaderTextContainer = styled.View`
-  ${({ theme }) => css`
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-  `}
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
 `;
 
 export const SubHeaderContainer = styled.View`
